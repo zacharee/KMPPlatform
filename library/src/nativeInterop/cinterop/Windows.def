@@ -1,0 +1,3 @@
+language = C++
+package = dev.zwander.kmp.platform.cinterop
+headers = windows.h

@@ -1,0 +1,15 @@
+[versions]
+android-gradle = "8.8.0"
+kotlin = "2.1.0"
+mavenPublish = "0.29.0"
+oshi = "6.6.5"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+oshi-core = { module = "com.github.oshi:oshi-core", version.ref = "oshi" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle" }
+android-library = { id = "com.android.library", version.ref = "android-gradle" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
