@@ -11,6 +11,8 @@ package dev.zwander.kmp.platform
  */
 internal fun getNavigatorInfo(): String = js("navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform")
 
+internal fun getUserAgent(): String = js("window.navigator.userAgent")
+
 /**
  * In a browser, user platform can be obtained from different places:
  * - we attempt to use not-deprecated but experimental option first (not available in all browsers)
@@ -22,7 +24,7 @@ internal fun getNavigatorInfo(): String = js("navigator.userAgentData ? navigato
 internal fun detectHostOs(): HostOS {
     val platformInfo = getNavigatorInfo().takeIf {
         it.isNotEmpty()
-    } ?: js("window.navigator.userAgent")
+    } ?: getUserAgent()
 
     return when {
         platformInfo.contains("Android", true) -> HostOS.Android
